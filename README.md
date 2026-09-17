@@ -1,10 +1,10 @@
 # Calidad del Agua — Saladillo
 
-[![sitio](https://img.shields.io/badge/sitio-wq.lemeit.ar-009688?style=flat-square)](https://wq.lemeit.ar) [![docs](https://img.shields.io/badge/docs-wiki.lemeit.ar-009688?style=flat-square)](https://wiki.lemeit.ar/red-ambiental/03-agua-saladillo/) [![API](https://img.shields.io/badge/API-parcial-FF5722?style=flat-square)](https://wiki.lemeit.ar/red-ambiental/03-agua-saladillo/#api-existente-parcial) [![licencia](https://img.shields.io/badge/licencia-MIT-009688?style=flat-square)](#licencia)
+[![sitio](https://img.shields.io/badge/sitio-app.lemeit.ar/wq-009688?style=flat-square)](https://app.lemeit.ar/wq) [![docs](https://img.shields.io/badge/docs-wiki.lemeit.ar-009688?style=flat-square)](https://wiki.lemeit.ar/red-ambiental/03-agua-saladillo/) [![API](https://img.shields.io/badge/API-parcial-FF5722?style=flat-square)](https://wiki.lemeit.ar/red-ambiental/03-agua-saladillo/#api-existente-parcial) [![licencia](https://img.shields.io/badge/licencia-MIT-009688?style=flat-square)](#licencia)
 
-Monitoreo de calidad de agua de red en Saladillo, Buenos Aires, Argentina: arsénico, nitratos, nitritos, fluoruro, metales pesados y parámetros bacteriológicos (coliformes totales, *Escherichia coli*, *Pseudomona aeruginosa*) sobre decenas de puntos de la red municipal (bombas, escuelas, jardines de infantes, domicilios). Publicado en [wq.lemeit.ar](https://wq.lemeit.ar).
+Monitoreo de calidad de agua de red en Saladillo, Buenos Aires, Argentina: arsénico, nitratos, nitritos, fluoruro, metales pesados y parámetros bacteriológicos (coliformes totales, *Escherichia coli*, *Pseudomona aeruginosa*) sobre decenas de puntos de la red municipal (bombas, escuelas, jardines de infantes, domicilios). Publicado en [app.lemeit.ar/wq](https://app.lemeit.ar/wq).
 
-Es uno de tres proyectos de monitoreo ambiental que comparten la misma infraestructura de Cloudflare (Pages + Workers + D1), pensados para integrarse a futuro: [emas.lemeit.ar](https://emas.lemeit.ar) (meteorología), [aq.lemeit.ar](https://aq.lemeit.ar) (calidad del aire, sensores PurpleAir) y este (calidad del agua).
+Es uno de tres proyectos de monitoreo ambiental que comparten la misma infraestructura de Cloudflare (Pages + Workers + D1), pensados para integrarse a futuro: [app.lemeit.ar/emas](https://app.lemeit.ar/emas) (meteorología), [app.lemeit.ar/aq](https://app.lemeit.ar/aq) (calidad del aire, sensores PurpleAir) y este (calidad del agua).
 
 📚 Documentación técnica completa, guías de uso de la API y bitácora de los tres portales: [wiki.lemeit.ar](https://wiki.lemeit.ar).
 
@@ -82,13 +82,13 @@ CARTO_API_KEY   # API key gratuita de CARTO Basemaps (tope 5M tiles/mes), para e
 - **Fisicoquímica completa (Tabla I)** — ✅ hecho en agosto 2026: pH, dureza, cloruros, sulfatos, color, turbiedad, olor, sólidos disueltos, amonio, aluminio, zinc, sodio, calcio, magnesio y varios orgánicos ya tienen límite CAA/PBA cargado en `LIM` (ver "Cobertura de parámetros" arriba). Pendiente: alcalinidad (no se encontró un límite normativo confiable en la investigación, se descartó por ahora esa columna del merge).
 - **Coordenadas en Cloudflare D1 + Worker, protegidas por clave** — ✅ hecho en agosto 2026: reemplaza el `localStorage` de coordenadas por una base compartida (`worker/`, `d1/schema.sql`), de solo-lectura pública y escritura protegida por `ADMIN_KEY`. El panel "⚙ Ubicaciones" además quedó oculto de la navegación salvo `?admin` en la URL.
 - **Backend propio para `RAW`/`LIM` (Cloudflare D1 + Worker)**: reemplazar el array/objeto `RAW`/`LIM` embebido por una base de datos real, siguiendo el mismo patrón que ya usan `lemeit-emas` y `lemeit-aq` (y que las coordenadas ya usan desde el ítem anterior). Es el paso que habilitaría, más adelante, que la ingesta automática escriba directo a la base en vez de a un CSV de staging para revisión manual.
-- Deploy en Cloudflare Pages (`wrangler pages deploy . --project-name=agua-saladillo`) apuntado a `wq.lemeit.ar` — **ya en producción** desde agosto 2026.
+- Deploy en Cloudflare Pages (`wrangler pages deploy . --project-name=agua-saladillo`) apuntado a `app.lemeit.ar/wq` — **ya en producción** desde agosto 2026.
 
 ## Red de monitoreo ambiental
 
-- **Meteorología** — [emas.lemeit.ar](https://emas.lemeit.ar)
-- **Calidad del aire** — [aq.lemeit.ar](https://aq.lemeit.ar)
-- **Calidad del agua** — este proyecto, [wq.lemeit.ar](https://wq.lemeit.ar)
+- **Meteorología** — [app.lemeit.ar/emas](https://app.lemeit.ar/emas)
+- **Calidad del aire** — [app.lemeit.ar/aq](https://app.lemeit.ar/aq)
+- **Calidad del agua** — este proyecto, [app.lemeit.ar/wq](https://app.lemeit.ar/wq)
 
 ## Proyecto educativo
 
