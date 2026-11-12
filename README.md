@@ -1,10 +1,13 @@
 # Calidad del Agua — Saladillo
 
-[![sitio](https://img.shields.io/badge/sitio-app.lemeit.ar/wq-009688?style=flat-square)](https://app.lemeit.ar/wq) [![docs](https://img.shields.io/badge/docs-wiki.lemeit.ar-009688?style=flat-square)](https://wiki.lemeit.ar/red-ambiental/03-agua-saladillo/) [![API](https://img.shields.io/badge/API-parcial-FF5722?style=flat-square)](https://wiki.lemeit.ar/red-ambiental/03-agua-saladillo/#api-existente-parcial) [![licencia](https://img.shields.io/badge/licencia-MIT-009688?style=flat-square)](#licencia)
+[![sitio](https://img.shields.io/badge/sitio-app.lemeit.ar/wq-009688?style=flat-square&labelColor=555555)](https://app.lemeit.ar/wq)
+[![docs](https://img.shields.io/badge/docs-wiki.lemeit.ar-009688?style=flat-square&labelColor=555555)](https://wiki.lemeit.ar/red-ambiental/03-agua-saladillo/)
+[![API](https://img.shields.io/badge/API-parcial-FF5722?style=flat-square&labelColor=555555)](https://wiki.lemeit.ar/red-ambiental/03-agua-saladillo/#api-existente-parcial)
+[![licencia](https://img.shields.io/badge/licencia-MIT-009688?style=flat-square&labelColor=555555)](#licencia)
 
 Monitoreo de calidad de agua de red en Saladillo, Buenos Aires, Argentina: arsénico, nitratos, nitritos, fluoruro, metales pesados y parámetros bacteriológicos (coliformes totales, *Escherichia coli*, *Pseudomona aeruginosa*) sobre decenas de puntos de la red municipal (bombas, escuelas, jardines de infantes, domicilios). Publicado en [app.lemeit.ar/wq](https://app.lemeit.ar/wq).
 
-Es uno de tres proyectos de monitoreo ambiental que comparten la misma infraestructura de Cloudflare (Pages + Workers + D1), pensados para integrarse a futuro: [app.lemeit.ar/emas](https://app.lemeit.ar/emas) (meteorología), [app.lemeit.ar/aq](https://app.lemeit.ar/aq) (calidad del aire, sensores PurpleAir) y este (calidad del agua).
+Es uno de tres proyectos de monitoreo ambiental que comparten la misma infraestructura de Cloudflare (Pages + Workers + D1), reunidos bajo el origen público `app.lemeit.ar` mediante el gateway, con repositorios y despliegues independientes: [app.lemeit.ar/emas](https://app.lemeit.ar/emas) (meteorología), [app.lemeit.ar/aq](https://app.lemeit.ar/aq) (calidad del aire, sensores PurpleAir) y este (calidad del agua).
 
 📚 Documentación técnica completa, guías de uso de la API y bitácora de los tres portales: [wiki.lemeit.ar](https://wiki.lemeit.ar).
 
